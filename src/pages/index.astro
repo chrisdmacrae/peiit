@@ -6,8 +6,10 @@ import Layout from "../layout/Layout.astro";
   <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800">
     <nav>
       <div class="max-w-[70rem] mx-auto px-8 flex items-center justify-between">
-        <img src="/images/logo-dark.png"class="block dark:hidden h-32 w-auto" />
-        <img src="/images/logo.png" class="hidden dark:block h-32 w-auto" />
+        <a href="/">
+          <img src="/images/logo-dark.png"class="block dark:hidden h-24 md:h-32 w-auto" />
+          <img src="/images/logo.png" class="hidden dark:block h-24 md:h-32 w-auto" />
+        </a>
         <ul class="flex flex-row items-center gap-4">
           <li class="hidden md:block">
             <a href="#" class="text-slate-800 hover:text-slate-500 dark:text-slate-100 dark:hover:text-slate-50">Connect</a>
@@ -26,7 +28,7 @@ import Layout from "../layout/Layout.astro";
           </li>
           <li>
             <button class="w-fit bg-slate-800 dark:bg-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-xl px-4 py-2 text-slate-50 dark:text-slate-800 hover:text-slate-500 dark:hover:text-slate-300 font-mono" data-theme>
-              Join now
+              Join <span class="hidden md:inline">now</span>
             </button>
           </li>
           <li>
@@ -51,7 +53,7 @@ import Layout from "../layout/Layout.astro";
     <section class="border-t md:border-b border-slate-200 dark:border-slate-700">
       <div class="max-w-[70rem] mx-auto grid grid-cols-1 md:grid-cols-2 [&>*]:border-b [&>*]:md:border-b-0 [&>:nth-child(2n-1)]:md:border-r">
         <div class="flex flex-col gap-4 border-slate-200 dark:border-slate-700 p-8">
-          <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">We are here to help with</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">We are here to help with</h2>
           <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-400">
             <li>IT Leadership</li>
             <li>Remote Workers</li>
@@ -63,7 +65,7 @@ import Layout from "../layout/Layout.astro";
           </button>
         </div>
         <aside class="flex flex-col gap-4 p-8">
-          <h2 class="text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Join the alliance</h2>
+          <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Join the alliance</h2>
           <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-400">
             <li>Local Individuals</li>
             <li>Remote Individuals</li>
@@ -96,7 +98,7 @@ import Layout from "../layout/Layout.astro";
     </section>
 
     <section id="partnerships" class="max-w-[70rem] mx-auto flex flex-col md:flex-row gap-6 px-8">
-      <h2 class="basis-2/3 shrink-0 grow-0 text-4xl font-bol text-slate-800 dark:text-slate-100 font-mono">
+      <h2 class="basis-2/3 shrink-0 grow-0 text-3xl md:text-4xl font-bol text-slate-800 dark:text-slate-100 font-mono">
         We believe in strong partnerships to strengthen the ecosystem
       </h2>
       <div class="flex flex-col items-center gap-2">
@@ -108,7 +110,7 @@ import Layout from "../layout/Layout.astro";
 
     <div class="w-full max-w-[70rem] mx-auto bg-slate-800 dark:bg-slate-50 rounded-t-3xl pt-24 p-16">
       <section id="feedback" class="flex flex-col md:flex-row gap-6">
-        <h2 class="basis-[60%] shrink-0 grow-0 text-6xl font-bold text-slate-100 dark:text-slate-800 font-mono">
+        <h2 class="basis-[60%] shrink-0 grow-0 text-4xl md:text-5xl font-bold text-slate-100 dark:text-slate-800 font-mono">
           <span class="tracking-tighter">Let's start</span> <span class="tracking-widest">something</span><br /> <div class="tracking-tightest"><span class="keyword">great</span> together</div>
         </h2>
         <div class="flex flex-col md:items-end basis-[40%] shrink-0">
@@ -137,8 +139,8 @@ import Layout from "../layout/Layout.astro";
 
       <hr class="border-b border-slate-700 dark:border-slate-200 my-12" />
 
-      <footer class="flex flex-row gap-4 justify-between">
-        <div class="basis-[14rem] flex flex-row md:flex-col items-start">
+      <footer class="flex flex-col md:flex-row gap-8 md:gap-4 justify-between">
+        <div class="order-2 md:order-1 basis-[14rem] flex flex-col items-start">
           <img src="/images/logo-dark.png"class="hidden dark:block h-24 w-auto" />
           <img src="/images/logo.png" class="block dark:hidden h-24 w-auto" />
           <p class="text-sm text-slate-500">
