@@ -1,0 +1,82 @@
+---
+---
+
+<div class="w-full max-w-[70rem] mx-auto bg-slate-800 dark:bg-slate-50 rounded-t-3xl pt-24 p-16">
+  <slot name="cta">
+    <section id="feedback" class="flex flex-col md:flex-row gap-6">
+      <h2 class="basis-[60%] shrink-0 grow-0 text-4xl md:text-5xl font-bold text-slate-100 dark:text-slate-800 font-mono">
+        <span class="tracking-tighter">Let's start</span> <span class="tracking-widest">something</span><br /> <div class="tracking-tightest"><span class="keyword">great</span> together</div>
+      </h2>
+      <div class="flex flex-col md:items-end basis-[40%] shrink-0">
+        <div class="relative group flex flex-col justify-center items-center w-[180px] h-[180px] bg-white rounded-full">
+          <svg viewBox="0 0 100 100" width="160" height="160" class="absolute top-[11.5px] left-[11.5px] group-hover:animate-spin">
+            <defs>
+              <path id="circle"
+                d="
+                  M 50, 50
+                  m -37, 0
+                  a 37,37 0 1,1 74,0
+                  a 37,37 0 1,1 -74,0"/>
+            </defs>
+            <text font-size="7.75">
+              <textPath xlink:href="#circle">
+                Leave your feedback • Leave your feedback • Leave your feedback •
+              </textPath>
+            </text>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="50" height="50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+          </svg>              
+        </div>
+      </div>
+    </section>
+  </slot>
+
+  <hr class="border-b border-slate-700 dark:border-slate-200 my-12" />
+
+  <footer class="flex flex-col md:flex-row gap-8 md:gap-4 justify-between">
+    <div class="order-2 md:order-1 basis-[14rem] flex flex-col items-start">
+      <img src="/images/logo-dark.png"class="hidden dark:block h-24 w-auto" />
+      <img src="/images/logo.png" class="block dark:hidden h-24 w-auto" />
+      <p class="text-sm text-slate-500">
+        The voice of the IT Industry of Prince Edward Island
+      </p>
+    </div>
+    <div class="flex-1 flex flex-col gap-2">
+      <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
+        The Alliance
+      </h3>
+      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
+        <li>Join the alliance</li>
+        <li>Remote work & workers</li>
+        <li>Tell me more</li>
+        <li>Connect</li>
+        <li>How can I help?</li>
+        <li>News</li>
+        <li>Code of conduct</li>
+      </ul>
+    </div>
+    <div class="flex-1 flex flex-col gap-2">
+      <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
+        PEI Devs
+      </h3>
+      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
+        <li>About PEI Devs</li>
+        <li>Code of Conduct</li>
+        <li>Elders</li>
+        <li>Event history</li>
+        <li>Upcoming events</li>
+        <li>Sponsors</li>
+      </ul>
+    </div>
+    <div class="flex-1 flex flex-col gap-2">
+      <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
+        PEI
+      </h3>
+      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
+        <li>About Prince Edward Island</li>
+        <li>Moving here</li>
+      </ul>
+    </div>
+  </footer>
+</div>

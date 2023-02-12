@@ -1,0 +1,94 @@
+---
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout>
+  <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800" slot="header">
+    <Nav />
+    
+    <header class="max-w-[70rem] md:min-h-[calc(100vh-32rem)] p-8 mx-auto flex flex-col md:flex-row md:items-end md:justify-end gap-4">
+      <div class="relative basis-1/2">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-100 font-mono">Let's<br /> <span class="text-sky-700">connect</span></h1>
+      </div>
+      <div>
+        <h2 class="text-lg md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">
+          <a href="mailto:ron@peiitalliance.com"class="border-b-2 border-sky-700">Send us an email</a>, or start a conversation by filling out the form below.
+        </h2>
+      </div>
+    </header>
+  </div>
+
+  <div class="relative w-full max-w-[70rem] mx-auto">
+    <div class="absolute -top-[25px] left-8 w-[50px] h-[50px] bg-slate-800 dark:bg-slate-100 rounded-full flex flex-col justify-center items-center text-slate-100 dark:text-slate-800">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="relative top-1 w-6 h-6 animate-bounce">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
+      </svg>      
+    </div>
+  </div>
+
+  </div>
+
+  <section id="contact" class="w-full max-w-[70rem] mx-auto flex flex-col md:flex-row gap-6 px-8">
+    <h2 class="text-3xl text-slate-800 dark:text-slate-100 font-mono">
+      Start the conversation
+    </h2>
+    <div class="w-full flex flex-col gap-6 font-mono">
+      <form class="flex flex-col gap-2">
+        <label for="name" class="font-bold text-slate-500">Your name</label>
+        <input type="text" id="name" name="name" class="h-12 bg-transparent border-b-2 border-slate-400 dark:border-slate-600 text-slate-800 dark:text-slate-100 w-full" />
+        <label for="email" class="font-bold text-slate-500">Your email</label>
+        <input type="email" id="name" name="name" class="h-12 bg-transparent border-b-2 border-slate-400 dark:border-slate-600 text-slate-800 dark:text-slate-100 w-full" />
+        <label for="message" class="font-bold text-slate-500">Your message</label>
+        <textarea id="message" name="message" rows="6" class="bg-transparent border-b-2 border-slate-400 dark:border-slate-600 text-slate-800 dark:text-slate-100 w-full" />
+      </form>
+      <h2 class="text-lg text-slate-800 dark:text-slate-100 font-mono">
+        Need us more urgently?
+      </h2>
+      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-600 dark:text-slate-400">
+        <li><a href="https://calendly.com/ron-myers/pei-it-alliance-discussion" target="_blank" rel="noopener">Book a meeting</a></li>
+        <li><a href="tel:1-902-314-2965">Text or call us (1-902-314-2965) anytime</a></li>
+      </ul>
+    </div>
+
+  </section>
+
+  <Footer />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const doc = document.documentElement
+      const themeToggles = document.querySelectorAll('[data-theme]')
+      const toggleTheme = () => {
+        if (doc.classList.contains('dark')) {
+          doc.classList.remove('dark')
+        }
+        else {
+          doc.classList.add('dark')
+        }
+      }
+
+      themeToggles.forEach(el => {
+        el.addEventListener('click', toggleTheme)
+      })
+    })
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const feedback = document.querySelector('#feedback')
+      if (!feedback) return
+      const keyword = feedback.querySelector('.keyword')
+      if (!keyword) return
+      const keywords = ['great', 'big', 'new']
+
+      let i = 0
+      setInterval(() => {
+        keyword.textContent = keywords[i]
+        i++
+        if (i >= keywords.length) i = 0
+      }, 2000)
+    })
+  </script>
+</Layout>

@@ -1,47 +1,13 @@
 ---
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
 import Layout from "../layout/Layout.astro";
 ---
 
 <Layout>
-  <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800">
-    <nav>
-      <div class="max-w-[70rem] mx-auto px-8 flex items-center justify-between">
-        <a href="/">
-          <img src="/images/logo-dark.png"class="block dark:hidden h-24 md:h-32 w-auto" />
-          <img src="/images/logo.png" class="hidden dark:block h-24 md:h-32 w-auto" />
-        </a>
-        <ul class="flex flex-row items-center gap-4">
-          <li class="hidden md:block">
-            <a href="#" class="text-slate-800 hover:text-slate-500 dark:text-slate-100 dark:hover:text-slate-50">Connect</a>
-          </li>
-          <li class="hidden md:block">
-            <a href="#" class="text-slate-800 hover:text-slate-500 dark:text-slate-100 dark:hover:text-slate-50">PEI Devs</a>
-          </li>
-          <li class="hidden md:block">
-            <a href="#" class="text-slate-800 hover:text-slate-500 dark:text-slate-100 dark:hover:text-slate-50">How can I help?</a>
-          </li>
-          <li class="hidden md:block">
-            <a href="#" class="text-slate-800 hover:text-slate-500 dark:text-slate-100 dark:hover:text-slate-50">About</a>
-          </li>
-          <li class="hidden md:block">
-            <a href="#" class="text-slate-800 hover:text-slate-500 dark:text-slate-100 dark:hover:text-slate-50">News</a>
-          </li>
-          <li>
-            <button class="w-fit bg-slate-800 dark:bg-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-xl px-4 py-2 text-slate-50 dark:text-slate-800 hover:text-slate-500 dark:hover:text-slate-300 font-mono" data-theme>
-              Join <span class="hidden md:inline">now</span>
-            </button>
-          </li>
-          <li>
-            <button class="w-fit bg-slate-800 dark:bg-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-xl px-4 py-2 text-slate-50 dark:text-slate-800 hover:text-slate-500 dark:hover:text-slate-300 font-mono" data-theme>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-              </svg>
-              <span class="sr-only">Toggle theme</span>        
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800" slot="header">
+    <Nav />
+
     <header class="md:min-h-[calc(100vh-32rem)] p-8 mx-auto flex flex-row items-end">
       <div class="lg:basis-[40%]" />
       <div class="relative max-w-[50rem] absolute bottom-0">
@@ -49,143 +15,66 @@ import Layout from "../layout/Layout.astro";
       </div>
     </header>
   </div>
-  <main class="flex flex-col gap-12 md:gap-24">
-    <section class="border-t md:border-b border-slate-200 dark:border-slate-700">
-      <div class="max-w-[70rem] mx-auto grid grid-cols-1 md:grid-cols-2 [&>*]:border-b [&>*]:md:border-b-0 [&>:nth-child(2n-1)]:md:border-r">
-        <div class="flex flex-col gap-4 border-slate-200 dark:border-slate-700 p-8">
-          <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">We are here to help with</h2>
-          <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-400">
-            <li>IT Leadership</li>
-            <li>Remote Workers</li>
-            <li>Students</li>
-            <li>Joining The Industry</li>
-          </ul>
-          <button class="w-fit border-2 border-slate-200 dark:border-slate-600 hover:border-slate-800 dark:hover:border-slate-400 rounded-xl px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 font-mono">
-            Learn more
-          </button>
-        </div>
-        <aside class="flex flex-col gap-4 p-8">
-          <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Join the alliance</h2>
-          <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-400">
-            <li>Local Individuals</li>
-            <li>Remote Individuals</li>
-            <li>Companies</li>
-            <li>Organizations</li>
-          </ul>
-          <button class="w-fit border-2 border-slate-200 dark:border-slate-600 hover:border-slate-800 dark:hover:border-slate-400 rounded-xl px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 font-mono">
-            Join now
-          </button>
-        </aside>
+
+  <section class="border-t md:border-b border-slate-200 dark:border-slate-700">
+    <div class="max-w-[70rem] mx-auto grid grid-cols-1 md:grid-cols-2 [&>*]:border-b [&>*]:md:border-b-0 [&>:nth-child(2n-1)]:md:border-r">
+      <div class="flex flex-col gap-4 border-slate-200 dark:border-slate-700 p-8">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">We are here to help with</h2>
+        <ul class="list-disc list-inside flex flex-col gap-2 text-slate-600 dark:text-slate-400">
+          <li>IT Leadership</li>
+          <li>Remote Workers</li>
+          <li>Students</li>
+          <li>Joining The Industry</li>
+        </ul>
+        <button class="w-fit border-2 border-slate-200 dark:border-slate-600 hover:border-slate-800 dark:hover:border-slate-400 rounded-xl px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 font-mono">
+          Learn more
+        </button>
       </div>
-    </section>
-
-    <section id="community" class="w-full mx-auto px-8">
-      <h2 class="max-w-[70rem] mx-auto text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Meet the community</h2>
-      <div class="flex flex-row w-[calc(100vw-2rem)] py-8 overflow-scroll">
-        <div class="w-[min-content] flex flex-row gap-2">
-          {[1,2,3,4,5,6,7,8].map(() => (
-            <div class="relative grow-0 shrink-0 basis-96 h-[30rem] rounded-3xl bg-[url('/images/profiles/jared-burry.png')] bg-cover overflow-hidden p-8 flex flex-col justify-end">
-              <div class="absolute z-0 top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent" />
-              <div class="relative z-1">
-                <h3 class="text text-slate-50 shadow-sm font-bold text-xl">Jared Burry</h3>
-                <p class="text text-slate-300 shadow-sm">Meet Jared Burry who lives on PEI and manages digital marketing for Ottawa’s Harris Computer</p>
-              </div>
-            </div>
-          ))}
-          <div />
-        </div>
-      </div>
-    </section>
-
-    <section id="partnerships" class="max-w-[70rem] mx-auto flex flex-col md:flex-row gap-6 px-8">
-      <h2 class="basis-2/3 shrink-0 grow-0 text-3xl md:text-4xl font-bol text-slate-800 dark:text-slate-100 font-mono">
-        We believe in strong partnerships to strengthen the ecosystem
-      </h2>
-      <div class="flex flex-col items-center gap-2">
-        <img src="/images/partnerships/pei-devs.png" class="grow-0 w-48" />
-        <img src="/images/partnerships/asda.png" class="grow-0 w-48" />
-        <img src="/images/partnerships/atlantic-fintech.png" class="grow-0 w-48" />
-      </div>
-    </section>
-
-    <div class="w-full max-w-[70rem] mx-auto bg-slate-800 dark:bg-slate-50 rounded-t-3xl pt-24 p-16">
-      <section id="feedback" class="flex flex-col md:flex-row gap-6">
-        <h2 class="basis-[60%] shrink-0 grow-0 text-4xl md:text-5xl font-bold text-slate-100 dark:text-slate-800 font-mono">
-          <span class="tracking-tighter">Let's start</span> <span class="tracking-widest">something</span><br /> <div class="tracking-tightest"><span class="keyword">great</span> together</div>
-        </h2>
-        <div class="flex flex-col md:items-end basis-[40%] shrink-0">
-          <div class="relative group flex flex-col justify-center items-center w-[180px] h-[180px] bg-white rounded-full">
-            <svg viewBox="0 0 100 100" width="160" height="160" class="absolute top-[11.5px] left-[11.5px] group-hover:animate-spin">
-              <defs>
-                <path id="circle"
-                  d="
-                    M 50, 50
-                    m -37, 0
-                    a 37,37 0 1,1 74,0
-                    a 37,37 0 1,1 -74,0"/>
-              </defs>
-              <text font-size="7.75">
-                <textPath xlink:href="#circle">
-                  Leave your feedback • Leave your feedback • Leave your feedback •
-                </textPath>
-              </text>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="50" height="50">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-            </svg>              
-          </div>
-        </div>
-      </section>
-
-      <hr class="border-b border-slate-700 dark:border-slate-200 my-12" />
-
-      <footer class="flex flex-col md:flex-row gap-8 md:gap-4 justify-between">
-        <div class="order-2 md:order-1 basis-[14rem] flex flex-col items-start">
-          <img src="/images/logo-dark.png"class="hidden dark:block h-24 w-auto" />
-          <img src="/images/logo.png" class="block dark:hidden h-24 w-auto" />
-          <p class="text-sm text-slate-500">
-            The voice of the IT Industry of Prince Edward Island
-          </p>
-        </div>
-        <div class="flex-1 flex flex-col gap-2">
-          <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
-            The Alliance
-          </h3>
-          <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
-            <li>Join the alliance</li>
-            <li>Remote work & workers</li>
-            <li>Tell me more</li>
-            <li>Connect</li>
-            <li>How can I help?</li>
-            <li>News</li>
-            <li>Code of conduct</li>
-          </ul>
-        </div>
-        <div class="flex-1 flex flex-col gap-2">
-          <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
-            PEI Devs
-          </h3>
-          <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
-            <li>About PEI Devs</li>
-            <li>Code of Conduct</li>
-            <li>Elders</li>
-            <li>Event history</li>
-            <li>Upcoming events</li>
-            <li>Sponsors</li>
-          </ul>
-        </div>
-        <div class="flex-1 flex flex-col gap-2">
-          <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
-            PEI
-          </h3>
-          <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
-            <li>About Prince Edward Island</li>
-            <li>Moving here</li>
-          </ul>
-        </div>
-      </footer>
+      <aside class="flex flex-col gap-4 p-8">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Join the alliance</h2>
+        <ul class="list-disc list-inside flex flex-col gap-2 text-slate-600 dark:text-slate-400">
+          <li>Local Individuals</li>
+          <li>Remote Individuals</li>
+          <li>Companies</li>
+          <li>Organizations</li>
+        </ul>
+        <button class="w-fit border-2 border-slate-200 dark:border-slate-600 hover:border-slate-800 dark:hover:border-slate-400 rounded-xl px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 font-mono">
+          Join now
+        </button>
+      </aside>
     </div>
-  </main>
+  </section>
+
+  <section id="community" class="w-full mx-auto px-8">
+    <h2 class="max-w-[70rem] mx-auto text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Meet the community</h2>
+    <div class="flex flex-row w-[calc(100vw-2rem)] py-8 overflow-scroll">
+      <div class="w-[min-content] flex flex-row gap-2">
+        {[1,2,3,4,5,6,7,8].map(() => (
+          <div class="relative grow-0 shrink-0 basis-96 h-[30rem] rounded-3xl bg-[url('/images/profiles/jared-burry.png')] bg-cover overflow-hidden p-8 flex flex-col justify-end">
+            <div class="absolute z-0 top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent" />
+            <div class="relative z-1">
+              <h3 class="text text-slate-50 shadow-sm font-bold text-xl">Jared Burry</h3>
+              <p class="text text-slate-300 shadow-sm">Meet Jared Burry who lives on PEI and manages digital marketing for Ottawa’s Harris Computer</p>
+            </div>
+          </div>
+        ))}
+        <div />
+      </div>
+    </div>
+  </section>
+
+  <section id="partnerships" class="max-w-[70rem] mx-auto flex flex-col md:flex-row gap-6 px-8">
+    <h2 class="basis-2/3 shrink-0 grow-0 text-3xl md:text-4xl font-bol text-slate-800 dark:text-slate-100 font-mono">
+      We believe in strong partnerships to strengthen the ecosystem
+    </h2>
+    <div class="flex flex-col items-center gap-2">
+      <img src="/images/partnerships/pei-devs.png" class="grow-0 w-48" />
+      <img src="/images/partnerships/asda.png" class="grow-0 w-48" />
+      <img src="/images/partnerships/atlantic-fintech.png" class="grow-0 w-48" />
+    </div>
+  </section>
+
+  <Footer />
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
