@@ -45,12 +45,12 @@ import Layout from "../layout/Layout.astro";
     </div>
   </section>
 
-  <section id="community" class="w-full mx-auto px-8">
-    <h2 class="max-w-[70rem] mx-auto text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Meet the community</h2>
-    <div class="flex flex-row w-[calc(100vw-2rem)] py-8 overflow-scroll">
+  <section id="community" class="w-full mx-auto">
+    <h2 class="px-8 max-w-[70rem] mx-auto text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Meet the community</h2>
+    <div class="flex flex-row w-screen py-8 px-8 overflow-scroll">
       <div class="w-[min-content] flex flex-row gap-2">
         {[1,2,3,4,5,6,7,8].map(() => (
-          <div class="relative grow-0 shrink-0 basis-96 h-[30rem] rounded-3xl bg-[url('/images/profiles/jared-burry.png')] bg-cover overflow-hidden p-8 flex flex-col justify-end">
+          <div class="relative grow-0 shrink-0 basis-[calc(100vw-4rem)] md:basis-96 h-[30rem] rounded-3xl bg-[url('/images/profiles/jared-burry.png')] bg-cover overflow-hidden p-8 flex flex-col justify-end">
             <div class="absolute z-0 top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent" />
             <div class="relative z-1">
               <h3 class="text text-slate-50 shadow-sm font-bold text-xl">Jared Burry</h3>
