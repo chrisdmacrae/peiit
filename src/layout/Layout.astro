@@ -15,8 +15,21 @@ const {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{[title, 'PEI IT Alliance'].join(' - ')}</title>
+		<title>{[title, 'PEI IT Alliance'].filter(v => v !== undefined).join(' - ')}</title>
     <meta name="description" content={description} />
+
+    <script is:inline>
+      const override = window.localStorage.getItem('theme')
+      const prefersDark = override === 'dark' || !override && window.matchMedia('(prefers-color-scheme: dark)').matches
+      const root = document.documentElement
+
+      if (prefersDark) {
+        root.classList.add('dark')
+      }
+      else {
+        root.classList.remove('dark')
+      }
+    </script>
 	</head>
 	<body class="bg-slate-50 dark:bg-slate-800">
     <slot name="header" />
@@ -24,5 +37,26 @@ const {
     <main class="relative flex flex-col gap-12 md:gap-24 border-t md:border-b border-slate-200 dark:border-slate-700">
       <slot />
     </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const doc = document.documentElement
+        const themeToggles = document.querySelectorAll('[data-theme]')
+        const toggleTheme = () => {
+          if (doc.classList.contains('dark')) {
+            doc.classList.remove('dark')
+            window.localStorage.setItem('theme', 'light')
+          }
+          else {
+            doc.classList.add('dark')
+            window.localStorage.setItem('theme', 'dark')
+          }
+        }
+  
+        themeToggles.forEach(el => {
+          el.addEventListener('click', toggleTheme)
+        })
+      })
+    </script>
 	</body>
 </html>

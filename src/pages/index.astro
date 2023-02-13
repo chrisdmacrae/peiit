@@ -81,25 +81,6 @@ const profiles = await getCollection('profiles')
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const doc = document.documentElement
-      const themeToggles = document.querySelectorAll('[data-theme]')
-      const toggleTheme = () => {
-        if (doc.classList.contains('dark')) {
-          doc.classList.remove('dark')
-        }
-        else {
-          doc.classList.add('dark')
-        }
-      }
-
-      themeToggles.forEach(el => {
-        el.addEventListener('click', toggleTheme)
-      })
-    })
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
       const feedback = document.querySelector('#feedback')
       if (!feedback) return
       const keyword = feedback.querySelector('.keyword')
