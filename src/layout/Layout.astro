@@ -1,4 +1,13 @@
 ---
+export interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title,
+  description = "The voice of Prince Edward Island's IT industry. We believe in strong partnerships to strengthen the ecosystem. Join for free today."
+} = Astro.props
 ---
 <html lang="en">
 	<head>
@@ -6,7 +15,8 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>PEI IT Alliance</title>
+		<title>{[title, 'PEI IT Alliance'].join(' - ')}</title>
+    <meta name="description" content={description} />
 	</head>
 	<body class="bg-slate-50 dark:bg-slate-800">
     <slot name="header" />

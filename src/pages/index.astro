@@ -1,7 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import Layout from "../layout/Layout.astro";
+
+const profiles = await getCollection('profiles')
 ---
 
 <Layout>
@@ -49,12 +52,12 @@ import Layout from "../layout/Layout.astro";
     <h2 class="px-8 max-w-[70rem] mx-auto text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Meet the community</h2>
     <div class="flex flex-row w-screen py-8 px-8 overflow-scroll">
       <div class="w-[min-content] flex flex-row gap-2">
-        {[1,2,3,4,5,6,7,8].map(() => (
-          <div class="relative grow-0 shrink-0 basis-[calc(100vw-4rem)] md:basis-96 h-[30rem] rounded-3xl bg-[url('/images/profiles/jared-burry.png')] bg-cover overflow-hidden p-8 flex flex-col justify-end">
+        {profiles.map(profile => (
+          <div class={`relative grow-0 shrink-0 basis-[calc(100vw-4rem)] md:basis-96 h-[30rem] rounded-3xl bg-cover overflow-hidden p-8 flex flex-col justify-end`} style={`background-image: url('${profile.data.photo}');`}>
             <div class="absolute z-0 top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-black to-transparent" />
             <div class="relative z-1">
-              <h3 class="text text-slate-50 shadow-sm font-bold text-xl">Jared Burry</h3>
-              <p class="text text-slate-300 shadow-sm">Meet Jared Burry who lives on PEI and manages digital marketing for Ottawa’s Harris Computer</p>
+              <h3 class="text text-slate-50 shadow-sm font-bold text-xl">{[profile.data.firstName, profile.data.lastName].join(' ')}</h3>
+              <p class="text text-slate-300 shadow-sm">{profile.data.title}</p>
             </div>
           </div>
         ))}
@@ -64,7 +67,7 @@ import Layout from "../layout/Layout.astro";
   </section>
 
   <section id="partnerships" class="max-w-[70rem] mx-auto flex flex-col md:flex-row gap-6 px-8">
-    <h2 class="basis-2/3 shrink-0 grow-0 text-3xl md:text-4xl font-bol text-slate-800 dark:text-slate-100 font-mono">
+    <h2 class="basis-2/3 shrink-0 grow-0 text-2xl md:text-4xl font-bol text-slate-800 dark:text-slate-100 font-mono">
       We believe in strong partnerships to strengthen the ecosystem
     </h2>
     <div class="flex flex-col items-center gap-2">
