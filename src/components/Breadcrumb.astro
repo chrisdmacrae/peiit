@@ -12,7 +12,7 @@ const pageSlugs = parts.reduce((parts: string[], part: string) => {
 
   return parts
 }, [])
-const pages = await Promise.all(pageSlugs.map(slug => getEntryBySlug('pages', slug)))
+const pages = (await Promise.all(pageSlugs.map(slug => getEntryBySlug('pages', slug))))
   .filter(page => page !== null)
 ---
 <nav class="flex" aria-label="Breadcrumb">
