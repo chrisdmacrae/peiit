@@ -1,69 +1,70 @@
 ---
-slug: meet-jared-burry-who-lives-on-pei-and-manages-digital-marketing-for-ottawas-harris-computer
-title: Meet Jared Burry who lives on PEI and manages digital marketing for Ottawa’s Harris Computer
-description: An interview that is part of a series of profiles showcasing Prince Edward Island’s IT remote workers
-firstName: Jared
-lastName: Burry
-photo: /images/profiles/jared-burry.png
-pubDate: 27/01/2023
+slug: meet-mohamad-allaham-pei-high-school-student-aspiring-to-secure-our-digital-world
+title: Meet Mohamad Allaham, PEI high school student aspiring to secure our digital world
+description: An interview that is part of a series of profiles showcasing Prince Edward Island’s IT students
+firstName: Mohamad
+lastName: Allaham
+photo: /images/profiles/mohamad-allaham.png
+pubDate: 08/02/2023
 ---
-Jared Burry is a Digital Marketing Specialist for Harris Computer, a software company headquartered in Ottawa, Ontario. Jared works remotely out of Prince Edward Island (PEI), where he grew up and attended university. Jared graduated from the Business Administration co-op program at the University of Prince Edward Island and specialized in Marketing. Outside of work, he uses his creativity and design skills to run Spectrum Creative and help businesses establish their own digital footprint. Jared works hard to be the best father to his newborn son.
+Mohamad Allaham is a grade 12 student at Colonel Gray High School in Charlottetown, Prince Edward Island (PEI). He has a passion for learning about technology and hopes to use it to make the world a more digitally safe place. Mohamad was a participant of PEI IT Alliance’s and PEI’s first CyberPatriot National Youth Cyber Defense Competition team. He plans to obtain a computer science degree from the University of Prince Edward Island and start a career in cybersecurity.
 
 ## How did you get into IT?
 
-Technology and the greater evolution of it has always been a passion of mine, so it has always been my goal to mix that with my passion for human behavior and how that can be translated into the business world, aka marketing. I decided early on in my path through university that the best way to get into the industry of my choice was by joining the co-operative education program where I could get direct experience in industries and roles I was interested in. After the completion of my degree, I had completed three work terms in differing industries, one of which was in the Information Technology space.
+I got into IT through a combination of passion and opportunity. As a child, I was always fascinated by technology and how it worked. I would often take apart my family's computers and other electronic devices to see how they were built and how they functioned. As I grew older, I realized that a career in IT would allow me to pursue my passion for technology while also providing a stable and well-paying job.
 
-## Can you describe your background and how you came to this point in your career?
+## Can you describe your background and how you came to this point in your school?
 
-The one co-op work term in the IT space was with a local utility software company called Cogsdale Corporation. During that work term, I was able to hone my skills in graphic design, information management, and creative content writing. From there I have been able to work in a variety of different fields doing a variety of different marketing functions including internal communications, brand management, market research, and marketing planning. This has prepared me to be a marketing generalist that can allow me to strive in any particular marketing facet which, most recently, is digitally-focused.
+My background is in computer science, I have always been fascinated by technology and how it works. As a high school student, I got into computer science by accident. At one point a few years ago, while I was browsing the web, I stumbled upon a motivational video on cybersecurity and I got hooked. I started to teach myself how to code during my spare time. I found it very interesting and challenging, and I decided to pursue a degree in computer science.
 
-## What’s your greatest accomplishment to this point?
+I took computer science classes in high school and participated in various competitions, such as CyberPatriot, which helped me to gain recognition in the cybersecurity field. I also took online courses to improve my skills, and I was thrilled to have placed around 50% in gold tier in the CyberPatriot competition, which was a great accomplishment for me.
 
-My crowning moment to date however is internally-directed, where I helped an organization reduce overdue training by 25% by creating a wrestling-style training incentive tournament, complete with wrestling-style department logos, a bracket for employees to fill out on which department they think would reduce their overdue training the most, and the grand prize of a genuine wrestling belt that the winning department would get to hold until they are dethroned.
+## What are you currently studying/learning?
 
-## Tell us about your current role and company. 
-### What does your company do for what sort of customers? What sorts of problems are you solving for customers? What is your main expertise and how do you use it in your current role?
+As a high school student, I am currently focusing on my studies and preparing for university. I am planning to enter the Computer Science program and I have been taking relevant courses such as programming, math and science. I am also taking a lot of online courses to improve my skills.
 
-My current role is as a Digital Marketing Specialist for Harris Computer. In this current role, my job is to manage digital communications and marketing activities in an effort to increase brand awareness, manage audience relationships, and attract more companies who are considering selling their business.
+Overall, I am committed to continuing my education and expanding my skills in the field of computer science and cybersecurity. I am excited to see where my passion for technology and social engineering will take me in the future.
 
-Harris is a particularly interesting software company, as it does not technically provide software to any of its customers. Instead, they are a diversified software acquirer that purchases turnkey, best-of-breed software in a variety of vertical markets including healthcare, utilities, and public sector.
+## What do you want to do in your future career? Tell us about the type of work you want to do and for who.
 
-At the corporate level, Harris helps business owners transition from a position of business ownership, while ensuring their employees, customers, and products and/or services are taken care of for the foreseeable future. At the business unit level, each Harris business unit helps their customers with their everyday operating challenges. This varies by vertical industry, but can include activities such as record management in hospitals or private practices in the healthcare sector, local government accounting in the public sector, and mobile workforce management in the utilities sector.
+As someone who has a passion for technology and social engineering, I see myself working in a career that allows me to use my skills to make a positive impact.
 
-My role is to help our [Mergers and Acquisitions (M&A)] team generate leads by creating various communication channels that we can use to connect with potential business owners. This helps those who are looking to sell their business connect with people from our M&A team to see if they are a good fit for the Harris family of companies. I do this by creating engaging content through press releases, social media posts, and other brand collateral that we can use to increase Harris’ brand awareness.
+In the future, after I graduate, I would like to work in a company or organization that specializes in cybersecurity, where I can put my skills to use in protecting sensitive information and preventing cyber attacks. I would like to work as a penetration tester, and consult with companies to find and fix vulnerabilities in their systems. I would also like to work for government agencies or non-profit organizations that are focused on protecting the public's data and security.
 
-## Can you tell us about a person who greatly influenced the success in your career?
-
-I credit a lot of different people with the nurturing and development of my career, many of whom helped out before I even began work that contributed towards my career such as my parents who helped out with my post-secondary education, and my professors and mentors who taught me invaluable skills in both marketing and in life.
-
-However, if I had to narrow it down to just one person in particular, it would be my two-time former boss Casey Dowd. Known to him as “Billy the Kid”, Casey saw my potential during my second co-op work term and allowed me to get my start in the technology field once I graduated, hiring me when he could have hired FAR more qualified applicants. Without that vote of confidence from him, I may not have ended up in the field that I know I am meant to be in.
-
-## What made you decide to work remotely on PEI?
-
-Prince Edward Island has always been the province I call home, as I have lived here practically my whole life (other than being born in Newfoundland). It is also home to those I am closest to, including my parents, my friends, my life partner, and my son. While my work does allow me to work essentially anywhere in the world, there is something about the small-town, “everyone knows who you are” vibe of PEI that I know draws me back in.
-
-## What is your favourite part about living in PEI and working remotely?
-
-Working remotely allows me the flexibility I need to help support my family. I can be there for when my newborn needs his diaper changed or to get my partner some lunch while she is taking care of him, and get straight back to work when I am done. Remote work is the perfect way to balance work and life and is 100% the future of work.
-
-## Where is your favourite place to go to unwind from your work day?
-
-After work I like to relax with my family, which currently involves tummy time with the baby or taking him for a drive so he will sleep. When the weather is a bit nicer, we like to head over to Lakeside for some beach time as we are just a hop, skip, and jump away.
-
-## What technology or tool are you excited about? What are you actively learning?
-
-Artificial Intelligence is, obviously, the way of the future, but it isn’t all about robotics and replacing jobs. Many AI tools are being developed that can help marketing efforts and have the ability to scale even the smallest of companies such as ChatGPT, StockAI, Browse AI, and much, much more. I am constantly on the lookout for new and exciting tools that can be used to support my marketing efforts.
-
-Other than learning about how to be a good father (the hardest thing I will ever learn), I am continuing to hone my craft in graphic design through my side-hustle Spectrum Creative.
+I would like to have a role where I am able to work with a team of experts and continue to learn and grow my skills. I would like to work in a fast-paced and challenging environment where I am able to make a real difference.
 
 ## What is one thing that you hope to achieve in your future career in 10 years?
 
-My goal in the next ten years is to continue working on my marketing expertise so that I can lead the charge of marketing operations in whatever organization I am a part of. I also want to be able to teach young marketers everything I have acquired along the way so that they too can be effective communicators in an increasingly digital age.
+In 10 years, I hope to have achieved a high level of expertise in my field, to have contributed to the development of more secure systems, and to have helped protect the sensitive information of many individuals and organizations. I would also like to have a reputation as a respected professional in my field, and to have mentored and trained others to become experts in the field of cybersecurity and social engineering.
+
+## Can you tell us about a book or a course that greatly influenced you?
+
+One book that greatly influenced me is "The Art of Deception: Controlling the Human Element of Security" by Kevin D. Mitnick. This book is written by one of the most famous social engineers of all time, and it provided me with a deeper understanding of how social engineering works and the many different tactics that can be used to manipulate people. The book also highlights the importance of security awareness and how individuals and organizations can protect themselves from social engineering attacks.
+
+## What made you decide to stay in PEI to attend university?
+
+The decision to stay in PEI to study was a combination of personal and practical reasons. One of the main reasons was the opportunity to stay with my family for a few years during university. Being able to have the support and comfort of my family while adjusting to university life was important to me.
+
+Additionally, the smaller class sizes and more personalized approach to education offered by universities in PEI provided me with an ideal environment to maintain a good academic performance. Another reason for staying in PEI to study was the opportunity to transfer to a more recognizable university for my last year of study. This allows me to take advantage of the resources and opportunities offered by larger universities while still being able to maintain a good academic record, and it also gives me a chance to explore different options and find the right fit for my future career.
+
+## What is your favourite part about living in PEI and studying here?
+
+As someone who moved to PEI, my favorite part about living here is the friendly and welcoming community. The people in PEI are very kind and always willing to help, which made it easy for me to adjust to my new home. Additionally, PEI is known for its beautiful beaches, picturesque landscapes and delicious seafood. I love being able to explore the island and enjoy its natural beauty, it's a great way to unwind from my studies.
+
+## Where is your favourite place to study?
+
+My favorite place to study is a quiet library, where I can focus and get my work done without any distractions. I like the atmosphere of the library, it's peaceful and quiet which makes it the perfect place for me to study.
+
+## Where do you go to unwind from your studies?
+
+I like to go to a nearby park. The natural surroundings and fresh air help me to clear my head and relax. It's a great way to take a break from my studies and recharge my batteries.
+
+## What technology or tool are you excited about? What are you actively learning?
+
+As someone who is passionate about technology, I am always excited about new advancements and tools in the field. Currently, I am particularly interested in artificial intelligence and machine learning. I believe that these technologies have the potential to revolutionize many industries and improve our daily lives in countless ways.
+
+I am actively learning about these technologies by taking online courses, reading research papers and participating in online communities. I am also excited about the advancements in cybersecurity and the development of new security tools and techniques. I believe that these technologies will play a vital role in protecting our personal and professional lives. I am actively learning about these topics by taking relevant courses, reading books, and participating in online communities.
 
 ## Can you provide us with a way that people can find you online?
 
-For someone who does digital marketing and social media for a living, I keep a relatively small digital footprint. I am most active on LinkedIn, and you can connect with me there at https://www.linkedin.com/in/jaredscottburry/,
-
-## Would you like to promote a product or service?
-
-If you are a small business owner, not-for-profit, startup, or entrepreneur and need some initial branding (logos, icons, etc.) done, check out my creative project Spectrum Creative, where I can help out for little to no cost: https://www.behance.net/specreative/
+Sure, people can find me online on LinkedIn, my profile [Mohamad Allaham](http://www.linkedin.com/in/mohamad-allaham-ab6772263).
