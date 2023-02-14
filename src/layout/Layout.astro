@@ -1,4 +1,6 @@
 ---
+import Tabbar from '../components/Tabbar.astro'
+
 export interface Props {
   title?: string
   description?: string
@@ -37,6 +39,8 @@ const {
     <main class="relative flex flex-col gap-12 md:gap-24 border-t md:border-b border-slate-200 dark:border-slate-700">
       <slot />
     </main>
+
+    <Tabbar />
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {

@@ -9,7 +9,7 @@
       </h2>
       <div class="flex flex-col md:items-end basis-[40%] shrink-0">
         <a href="/contact">
-          <div class="relative group flex flex-col justify-center items-center w-[180px] h-[180px] bg-white rounded-full">
+          <div class="relative group flex flex-col justify-center items-center w-[180px] h-[180px] bg-slate-50 dark:bg-slate-800 rounded-full">
             <svg viewBox="0 0 100 100" width="160" height="160" class="absolute top-[11.5px] left-[11.5px] group-hover:animate-spin">
               <defs>
                 <path id="circle"
@@ -19,13 +19,13 @@
                     a 37,37 0 1,1 74,0
                     a 37,37 0 1,1 -74,0"/>
               </defs>
-              <text font-size="7.75">
+              <text font-size="7.75" class="fill-sky-500">
                 <textPath xlink:href="#circle">
                   Leave your feedback • Leave your feedback • Leave your feedback •
                 </textPath>
               </text>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="50" height="50">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="50" height="50" class="stroke-slate-800 dark:stroke-slate-50">
               <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
             </svg>              
           </div>
@@ -48,37 +48,54 @@
       <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
         The Alliance
       </h3>
-      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
-        <li>Join the alliance</li>
-        <li>Remote work & workers</li>
-        <li>Tell me more</li>
-        <li>Connect</li>
-        <li>How can I help?</li>
-        <li>News</li>
-        <li>Code of conduct</li>
+      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 [&>li:hover]:text-slate-300 dark:text-slate-600 dark:[&>li:hover]:text-slate-500 underline">
+        <li><a href="#">Join the alliance</a></li>
+        <li><a href="#">Remote work & workers</a></li>
+        <li><a href="#">Tell me more</a></li>
+        <li><a href="/contact">Connect</a></li>
+        <li><a href="#">How can I help?</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Code of conduct</a></li>
       </ul>
     </div>
     <div class="order-2 md:order-3 flex-1 flex flex-col gap-2">
       <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
         PEI Devs
       </h3>
-      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
-        <li>About PEI Devs</li>
-        <li>Code of Conduct</li>
-        <li>Elders</li>
-        <li>Event history</li>
-        <li>Upcoming events</li>
-        <li>Sponsors</li>
+      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 [&>li:hover]:text-slate-300 dark:text-slate-600 dark:[&>li:hover]:text-slate-500 underline">
+        <li><a href="/pei-devs">About PEI Devs</a></li>
+        <li><a href="#">Code of Conduct</a></li>
+        <li><a href="#">Elders</a></li>
+        <li><a href="#">Event history</a></li>
+        <li><a href="#">Upcoming events</a></li>
+        <li><a href="#">Sponsors</a></li>
       </ul>
     </div>
     <div class="order-3 md:order-4 flex-1 flex flex-col gap-2">
       <h3 class="text-slate-50 dark:text-slate-800 font-bold font-mono">
         PEI
       </h3>
-      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 dark:text-slate-600">
-        <li>About Prince Edward Island</li>
-        <li>Moving here</li>
+      <ul class="list-disc list-inside flex flex-col gap-2 text-slate-400 [&>li:hover]:text-slate-300 dark:text-slate-600 dark:[&>li:hover]:text-slate-500 underline">
+        <li><a href="#">About Prince Edward Island</a></li>
+        <li><a href="#">Moving here</a></li>
       </ul>
     </div>
   </footer>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const feedback = document.querySelector('#feedback')
+    if (!feedback) return
+    const keyword = feedback.querySelector('.keyword')
+    if (!keyword) return
+    const keywords = ['great', 'big', 'new']
+
+    let i = 0
+    setInterval(() => {
+      keyword.textContent = keywords[i]
+      i++
+      if (i >= keywords.length) i = 0
+    }, 2000)
+  })
+</script>
