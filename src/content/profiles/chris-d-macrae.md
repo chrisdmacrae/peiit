@@ -1,5 +1,5 @@
 ---
-slug: meet-jared-burry-who-lives-on-pei-and-manages-digital-marketing-for-ottawas-harris-computer
+slug: test
 title: Some test content
 description: An interview that is part of a series of profiles showcasing Prince Edward Island’s IT remote workers
 firstName: Test

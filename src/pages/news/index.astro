@@ -1,0 +1,64 @@
+---
+import { getCollection, getEntryBySlug } from "astro:content"
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Footer from "../../components/Footer.astro";
+import Nav from "../../components/Nav.astro";
+import Layout from "../../layout/Layout.astro";
+import {Picture} from '@astrojs/image/components'
+
+const page = await getEntryBySlug('pages', '_news') as any
+const profiles = await getCollection('profiles')
+---
+<Layout title={page.data.title} {...page.data.meta}>
+    
+  <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800" slot="header">
+    <Nav />
+    
+    <header class="max-w-[70rem] mx-auto md:min-h-[calc(100vh-32rem)] p-8 mx-auto flex flex-row items-end">
+      <div class="xl:basis-[18rem]" />
+      <div class="relative max-w-[50rem] absolute bottom-0">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-100 font-mono">Recent Industry News</h1>
+        <div class="relative max-w-[50rem]">
+          <div class="absolute z-10 top-[7px] left-8 xl:left-1 w-[50px] h-[50px] bg-slate-800 dark:bg-slate-100 rounded-full flex flex-col justify-center items-center text-slate-100 dark:text-slate-800">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="relative top-1 w-6 h-6 animate-bounce">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
+            </svg>      
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="flex flex-wrap flex-col md:flex-row gap-6 max-w-[70rem] mx-auto p-8 md:py-16">
+    <div class="flex-1 basis-full">
+      <Breadcrumb>
+        <li class="inline-flex items-center">
+          <a href="/news" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+            <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+            News
+          </a>
+        </li>
+      </Breadcrumb>
+    </div>
+    <div class="flex flex-col gap-4 [&>:last-child]:border-b-0">
+      {profiles.map(profile => (
+        <a href={`/news/${profile.slug}`} class="group">
+          <div class="w-full border-b border-b-slate-200 dark:border-b-slate-700 py-6">
+            <div class="flex flex-row gap-4 justify-between">
+              <div class="flex flex-col">
+                <h1 class="font-mono font-bold text-xl dark:text-slate-100 group-hover:text-sky-500">{profile.data.title}</h1>
+                <p class="text-md text-slate-500 dark:text-slate-400">{profile.data.description}</p>
+                <span class="text-sky-600 group-hover:text-sky-500">Read more</span>
+              </div>
+              <div class="basis-24 shrink-0">
+                <Picture alt="" src={profile.data.photo} widths={[96, 192, 288]} sizes="96px" fit="cover" aspectRatio="1:1" role="presentation" class="w-24" />
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
