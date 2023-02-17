@@ -1,0 +1,25 @@
+---
+export interface Props {
+  url: URL
+  headings: any[]
+}
+
+const { headings, url } = Astro.props
+---
+<aside>
+  <h3 class="font-mono text-md font-bold text-slate-500">Table of Contents</h3>
+  <ol class="flex flex-col gap-2 font-mono text-sm font-bold text-slate-800 dark:text-slate-200">
+    {headings.map(heading => {
+      if (heading.depth > 3) return
+
+      let headingUrl = url
+      headingUrl.hash = heading.slug
+
+      return (
+        <a href={url.href} class="hover:text-sky-500">
+          <li class={heading.depth === 2 ? 'mr-0' : 'mr-2'}>{heading.text}</li>
+        </a>
+      )
+    })}
+  </ol>
+</aside>
