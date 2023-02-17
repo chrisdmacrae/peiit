@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout title="You found an empty closet!" description="This page does not exist">
+  <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800" slot="header">
+    <Nav />
+
+    <header class="md:min-h-[calc(100vh-32rem)] p-8 mx-auto flex flex-row items-end">
+      <div class="lg:basis-[40%]" />
+      <div class="relative max-w-[50rem] absolute bottom-0">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-100 font-mono">
+          You're lost, pal!
+        </h1>
+        <h2 class="text-lg md:text-2xl text-slate-500 dark:text-slate-100 font-mono">
+          Try following one of the links below
+        </h2>
+      </div>
+    </header>
+  </div>
+
+  <section class="border-t md:border-b border-slate-200 dark:border-slate-700">
+    <div class="max-w-[70rem] mx-auto grid grid-cols-1 md:grid-cols-2 [&>*]:border-b [&>*]:md:border-b-0 [&>:nth-child(2n-1)]:md:border-r">
+      <div class="flex flex-col gap-4 border-slate-200 dark:border-slate-700 p-8">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">We are here to help with</h2>
+        <ul class="list-disc list-inside flex flex-col gap-2 text-slate-600 dark:text-slate-400">
+          <li>IT Leadership</li>
+          <li>Remote Workers</li>
+          <li>Students</li>
+          <li>Joining The Industry</li>
+        </ul>
+        <button class="w-fit border-2 border-slate-200 dark:border-slate-600 hover:border-slate-800 dark:hover:border-slate-400 rounded-xl px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 font-mono">
+          Learn more
+        </button>
+      </div>
+      <aside class="flex flex-col gap-4 p-8">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-800 dark:text-slate-100 font-mono">Join the alliance</h2>
+        <ul class="list-disc list-inside flex flex-col gap-2 text-slate-600 dark:text-slate-400">
+          <li>Local Individuals</li>
+          <li>Remote Individuals</li>
+          <li>Companies</li>
+          <li>Organizations</li>
+        </ul>
+        <button class="w-fit border-2 border-slate-200 dark:border-slate-600 hover:border-slate-800 dark:hover:border-slate-400 rounded-xl px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 font-mono">
+          Join now
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

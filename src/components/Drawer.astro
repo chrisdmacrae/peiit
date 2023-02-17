@@ -1,0 +1,75 @@
+---
+export interface Props {
+  id: string
+  title: string
+}
+
+const { id, title } = Astro.props
+---
+<aside id={id} class="fixed bottom-0 translate-y-full transition-all ease-out duration-300 left-0 lg:left-auto w-full h-screen h-[-webkit-fill-available_!important] z-40">
+  <div class="absolute top-0 right-0 bottom-0 left-0" data-drawer-underlay="true" />
+  <div class="absolute top-4 md:top-8 right-0 bottom-0 left-0 h-full border border-slate-200 bg-slate-50 rounded-t-2xl p-4 md:p-8 w-full max-w-[70rem]">
+    <nav>
+      <button data-drawer={id} class="absolute right-4 md:right-8 top-4 md:top-8">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        <div class="sr-only">Close</div>        
+      </button>
+      <h2 class="text-lg text-center font-bold text-tan-900">{title}</h2>
+    </nav>
+    <hr class="border border-tan-100 mx-auto my-2 w-full rounded-full max-w-[4rem]" />
+    <div class="absolute top-16 right-4 md:right-8 bottom-0 left-4 md:left-8 overflow-x-hidden overflow-y-scroll">
+      <slot />
+    </div>
+  </div>
+</aside>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const triggers = document.querySelectorAll('[data-drawer]')
+
+    triggers.forEach(el => {
+      const modalId = el.getAttribute('data-drawer')
+
+      if (!modalId) return
+
+      const body = document.querySelector('body')
+      const modal = document.querySelector(`#${modalId}`)
+
+      if (!body || !modal) return
+
+      const underlay = modal.querySelector('[data-drawer-underlay]')
+
+      if (!underlay) return
+
+      const toggleModal = () => {
+        if (modal.classList.contains('translate-y-full')) {
+          body.classList.add('overflow-hidden')
+          modal.classList.remove('translate-y-full')
+        } else {
+          body.classList.remove('overflow-hidden')
+          modal.classList.add('translate-y-full')
+        }
+      }
+      const closeModal = (e: Event) => {
+        if (e.target === modal || e.target === el) return
+
+        body.classList.remove('overflow-hidden')
+        modal.classList.add('translate-y-full')
+
+        document.removeEventListener('click', closeModal)
+        document.removeEventListener('keydown', closeModal)        
+      }
+
+      el.addEventListener('click', () => {
+        toggleModal()
+
+        underlay.addEventListener('click', closeModal)
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape') closeModal(e)
+        })
+      })
+    })
+  })
+</script>
