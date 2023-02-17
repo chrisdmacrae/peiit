@@ -5,6 +5,8 @@ import Nav from "../components/Nav.astro";
 import Layout from "../layout/Layout.astro";
 
 const profiles = await getCollection('profiles')
+
+export const prerender = true
 ---
 
 <Layout>

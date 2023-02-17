@@ -8,6 +8,32 @@ import {Picture} from '@astrojs/image/components'
 
 const page = await getEntryBySlug('pages', '_news') as any
 const profiles = await getCollection('profiles')
+const news = await getCollection('news')
+
+export type NewsItem = {
+  type: "profiles" | "news"
+  slug: string
+  title: string
+  description: string
+  image: string
+  pubDate: Date,
+  meta?: {
+    title: string
+    description: string
+  }
+}
+
+const items: NewsItem[] = [...profiles, ...news]
+  .map(i => ({ 
+    ...i.data, 
+    slug: i.slug, 
+    image: 'photo' in i.data ? i.data.photo : '/test',
+    type: 'photo' in i.data ? 'profiles' : 'news' as NewsItem['type']
+  }))
+  // @ts-ignore
+  .sort((a, b) => b.pubDate - a.pubDate)
+
+export const prerender = true
 ---
 <Layout title={page.data.title} {...page.data.meta}>
     
@@ -41,17 +67,17 @@ const profiles = await getCollection('profiles')
       </Breadcrumb>
     </div>
     <div class="flex flex-col gap-4 [&>:last-child]:border-b-0">
-      {profiles.map(profile => (
-        <a href={`/news/${profile.slug}`} class="group">
+      {items.map(item => (
+        <a href={`/news/${item.slug}`} class="group">
           <div class="w-full border-b border-b-slate-200 dark:border-b-slate-700 py-6">
             <div class="flex flex-row gap-4 justify-between">
               <div class="flex flex-col">
-                <h1 class="font-mono font-bold text-xl dark:text-slate-100 group-hover:text-sky-500">{profile.data.title}</h1>
-                <p class="text-md text-slate-500 dark:text-slate-400">{profile.data.description}</p>
+                <h1 class="font-mono font-bold text-xl dark:text-slate-100 group-hover:text-sky-500">{item.title}</h1>
+                <p class="text-md text-slate-500 dark:text-slate-400">{item.description}</p>
                 <span class="text-sky-600 group-hover:text-sky-500">Read more</span>
               </div>
               <div class="basis-24 shrink-0">
-                <Picture alt="" src={profile.data.photo} widths={[96, 192, 288]} sizes="96px" fit="cover" aspectRatio="1:1" role="presentation" class="w-24" />
+                <Picture alt="" src={item.image} widths={[96, 192, 288]} sizes="96px" fit="cover" aspectRatio="1:1" role="presentation" class="w-24" />
               </div>
             </div>
           </div>

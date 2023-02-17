@@ -13,7 +13,12 @@ import react from "@astrojs/react";
 import image from "@astrojs/image";
 
 // https://astro.build/config
+import vercel from "@astrojs/vercel/serverless";
+
+// https://astro.build/config
 export default defineConfig({
-  site: "https://peiit.vercel.app",
-  integrations: [tailwind(), mdx(), react(), image()]
+  site: import.meta.env.DEV ? 'http://localhost:3000' : "https://peiit.vercel.app",
+  integrations: [tailwind(), mdx(), react(), image()],
+  output: "server",
+  adapter: vercel()
 });

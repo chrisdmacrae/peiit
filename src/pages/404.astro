@@ -1,8 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import Layout from "../layout/Layout.astro";
+
+export const prerender = true
 ---
 
 <Layout title="You found an empty closet!" description="This page does not exist">

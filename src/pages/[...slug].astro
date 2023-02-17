@@ -26,6 +26,8 @@ export async function getStaticPaths() {
 const { page: { data, render }, subPages } = Astro.props;
 const { Content, headings } = await render()
 const url = Astro.url
+
+export const prerender = true
 ---
 <Layout title={data.title} description={data.description} {...data.meta}>
   <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800" slot="header">

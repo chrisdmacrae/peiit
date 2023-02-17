@@ -5,6 +5,8 @@ import Nav from "../components/Nav.astro";
 import Layout from "../layout/Layout.astro";
 
 const page = await getEntryBySlug('pages', '_contact') as any
+
+export const prerender = true
 ---
 
 <Layout {...page.data.meta}>

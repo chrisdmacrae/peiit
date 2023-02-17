@@ -14,6 +14,15 @@ const pageCollection = defineCollection({
   }),
 })
 
+const newsCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.string().transform(str => new Date(str)),
+    meta: seo
+  }),  
+})
+
 const profileCollection = defineCollection({
   schema: z.object({
     firstName: z.string(),
@@ -28,5 +37,6 @@ const profileCollection = defineCollection({
 
 export const collections = {
   'pages': pageCollection,
+  'news': newsCollection,
   'profiles': profileCollection,
 }

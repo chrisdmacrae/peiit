@@ -1,23 +1,40 @@
 ---
-import { getCollection } from "astro:content"
+import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content"
 import TableOfContents from "../../components/TableOfContents.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.astro";
 import typography from "../../content/typography";
 import Layout from "../../layout/Layout.astro";
+import type { NewsItem } from "./index.astro";
 
 export async function getStaticPaths() {
   const profiles = await getCollection('profiles')
+  const news = await getCollection('news')
+  const items = [...profiles, ...news]
+    .map(i => ({ 
+      slug: i.slug, 
+      type: 'photo' in i.data ? 'profiles' : 'news' as NewsItem['type']
+    }))
 
-  return profiles.map(page => ({
-    params: { slug: page.slug }, props: { page }
+  const pages = await Promise.all(items.map(async item => {
+    const page = await getEntryBySlug(item.type, item.slug) as CollectionEntry<"profiles"> | CollectionEntry<"news"> | undefined
+
+    if (!page) return null
+
+    return page
   }))
+
+  return pages
+    .filter(p => p !== null)
+    .map(page => ({ params: { slug: page!.slug }, props: { page } }))
 }
 
 const { page: { data, render } } = Astro.props;
 const { Content, headings } = await render()
 const url = Astro.url
+
+export const prerender = true
 ---
 <Layout title={data.title} description={data.description} {...data.meta}>
     

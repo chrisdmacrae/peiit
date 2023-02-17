@@ -1,6 +1,7 @@
 ---
 import Tabbar from '../components/Tabbar.astro'
 import Drawer from '../components/Drawer.astro'
+import { generateOGUrl } from '../pages/api/og.png'
 
 export interface Props {
   title?: string
@@ -11,13 +12,18 @@ const {
   title,
   description = "The voice of Prince Edward Island's IT industry. We believe in strong partnerships to strengthen the ecosystem. Join for free today."
 } = Astro.props
+
+const ogImageUrl = generateOGUrl({ title: title || "PEI IT Alliance" })
 ---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/api/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
 		<title>{[title, 'PEI IT Alliance'].filter(v => v !== undefined).join(' - ')}</title>
     <meta name="description" content={description} />
 
@@ -45,6 +51,7 @@ const {
 
     <div class="relative max-w-[70rem] mx-auto">
       <Drawer id="join" title="Join the Alliance">
+        <p class="text-md text-slate-700 max-w-prose mx-auto py-6">Joining the alliance is completely free. You're opting into a community of local and remote workers, companies, and organizations invested in your success in IT.</p>
         <form class="flex flex-col gap-2">
           <label for="name" class="font-bold text-slate-500">Your name</label>
           <input type="text" id="name" name="name" class="h-12 border-b-2 bg-slate-100 border-slate-400 text-slate-800 w-full" />
