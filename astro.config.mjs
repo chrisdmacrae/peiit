@@ -14,6 +14,6 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "peiit.vercel.app",
+  site: "https://peiit.vercel.app",
   integrations: [tailwind(), mdx(), react(), image()]
 });
