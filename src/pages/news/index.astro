@@ -33,7 +33,7 @@ const items: NewsItem[] = [...profiles, ...news]
   // @ts-ignore
   .sort((a, b) => b.pubDate - a.pubDate)
 
-export const prerender = false
+export const prerender = true
 ---
 <Layout title={page.data.title} {...page.data.meta}>
     
