@@ -18,7 +18,6 @@ export async function generateImage(Component: any, props: Record<string, any>, 
   const roboto900 = await fetch(new URL('/fonts/RobotoMono/RobotoMono-Bold.ttf', site)).then(
     (res) => res.arrayBuffer()
   )
-  console.log(new URL('/fonts/RobotoMono/RobotoMono-Bold.ttf', site))
   const svg = await satori(
     Component(props),
     {

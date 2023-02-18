@@ -18,6 +18,7 @@ const newsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    image: z.optional(z.string()),
     pubDate: z.string().transform(str => new Date(str)),
     meta: seo
   }),  

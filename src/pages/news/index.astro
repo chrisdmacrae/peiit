@@ -27,7 +27,7 @@ const items: NewsItem[] = [...profiles, ...news]
   .map(i => ({ 
     ...i.data, 
     slug: i.slug, 
-    image: 'photo' in i.data ? i.data.photo : `/api/og.png?title=${i.data.title}`,
+    image: 'photo' in i.data ? i.data.photo : i.data.image || `/api/og.png?title=${i.data.title}&w=1000&h=1000`,
     type: 'photo' in i.data ? 'profiles' : 'news' as NewsItem['type']
   }))
   // @ts-ignore
