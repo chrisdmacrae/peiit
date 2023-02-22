@@ -19,7 +19,7 @@ export const Spanner = () => {
         <motion.div 
           initial={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
           whileInView={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
-          className="relative lg:-left-[5rem] basis-full shrink-0 flex flex-row flex-wrap items-center gap-10 mx-auto"
+          className="relative lg:-left-[5rem] basis-full shrink-0 flex flex-row items-center gap-10 mx-auto"
         >
           <ul className="underline col-start-1 flex flex-row gap-4">
             <li>Software developers</li>
@@ -44,7 +44,7 @@ export const Spanner = () => {
         <motion.div 
           initial={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
           whileInView={{ transform: `translateX(${hookedYPostion * 10}rem)` }}
-          className="relative left-[4.5rem] lg:left-[6.5rem] basis-full shrink-0 flex flex-row flex-wrap gap-10 mx-auto"
+          className="relative left-[4.5rem] lg:left-[6.5rem] basis-full shrink-0 flex flex-row gap-10 mx-auto"
         >
           <ul className="underline col-start-3 flex flex-row items-center gap-4">
             <li>Designers</li>
@@ -69,7 +69,7 @@ export const Spanner = () => {
         <motion.div 
           initial={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
           whileInView={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
-          className="relative left-[0.5rem] lg:-left-[3rem] basis-full shrink-0 flex flex-row flex-wrap gap-10 mx-auto"
+          className="relative left-[0.5rem] lg:-left-[3rem] basis-full shrink-0 flex flex-row gap-10 mx-auto"
         >
           <ul className="underline col-start-3 flex flex-row items-center gap-4">
             <li>Teachers</li>
