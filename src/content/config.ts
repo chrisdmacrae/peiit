@@ -1,8 +1,8 @@
 import { z, defineCollection } from 'astro:content';
 
 const seo = z.optional(z.object({
-  title: z.string(),
-  description: z.string()
+  title: z.optional(z.string()),
+  description: z.optional(z.string())
 }))
 
 const pageCollection = defineCollection({

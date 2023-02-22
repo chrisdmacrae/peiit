@@ -1,12 +1,12 @@
 ---
-import { getEntryBySlug } from "astro:content"
+import { getEntryBySlug, CollectionEntry } from "astro:content"
 import ConnectForm from "../components/forms/ConnectForm.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import Layout from "../layout/Layout.astro";
 import Lines from "../components/Lines.astro";
 
-const page = await getEntryBySlug('pages', '_contact') as any
+const page = await getEntryBySlug('pages', '_contact') as CollectionEntry<'pages'>
 
 export const prerender = true
 ---

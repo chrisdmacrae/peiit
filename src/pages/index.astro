@@ -1,16 +1,17 @@
 ---
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content";
 import Lines from "../components/Lines.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import Layout from "../layout/Layout.astro";
 
+const {data} = await getEntryBySlug('pages', '_homepage') as CollectionEntry<'pages'>
 const profiles = await getCollection('profiles')
 
 export const prerender = true
 ---
 
-<Layout>
+<Layout description={data.description} {...data.meta}>
   <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800" slot="header">
 
     <Nav />
@@ -22,7 +23,7 @@ export const prerender = true
 
       <div class="lg:basis-[40%]" />
       <div class="relative max-w-[50rem] absolute bottom-0">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-100 font-mono">The voice of Prince Edward Island's IT industry</h1>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-100 font-mono"></h1>
       </div>
     </header>
   </div>
