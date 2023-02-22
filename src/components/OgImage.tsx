@@ -1,3 +1,6 @@
+import svgToTinyDataUri from 'mini-svg-data-uri'
+import Lines from './Lines'
+
 export type OgImageProps = {
   title: string
   site: string

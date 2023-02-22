@@ -5,7 +5,7 @@ import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.astro";
 import Layout from "../../layout/Layout.astro";
 import {Picture} from '@astrojs/image/components'
-import Lines from "../../components/Lines.astro";
+import Lines from "../../components/Lines";
 
 const page = await getEntryBySlug('pages', '_news') as any
 const profiles = await getCollection('profiles')

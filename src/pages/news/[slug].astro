@@ -7,7 +7,7 @@ import Nav from "../../components/Nav.astro";
 import typography from "../../content/typography";
 import Layout from "../../layout/Layout.astro";
 import type { NewsItem } from "./index.astro";
-import Lines from "../../components/Lines.astro";
+import Lines from "../../components/Lines";
 
 export async function getStaticPaths() {
   const profiles = await getCollection('profiles')
