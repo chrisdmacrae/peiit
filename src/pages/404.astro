@@ -1,4 +1,5 @@
 ---
+import Lines from "../components/Lines.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import Layout from "../layout/Layout.astro";
@@ -10,7 +11,11 @@ export const prerender = true
   <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800" slot="header">
     <Nav />
 
-    <header class="md:min-h-[calc(100vh-32rem)] p-8 mx-auto flex flex-row items-end">
+    <header class="relative md:min-h-[calc(100vh-32rem)] p-8 mx-auto flex flex-row items-end">
+      <div class="absolute -bottom-6 right-0 w-96 h-96">
+        <Lines />
+      </div>
+
       <div class="lg:basis-[40%]" />
       <div class="relative max-w-[50rem] absolute bottom-0">
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-100 font-mono">

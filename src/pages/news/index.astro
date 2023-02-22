@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import Nav from "../../components/Nav.astro";
 import Layout from "../../layout/Layout.astro";
 import {Picture} from '@astrojs/image/components'
+import Lines from "../../components/Lines.astro";
 
 const page = await getEntryBySlug('pages', '_news') as any
 const profiles = await getCollection('profiles')
@@ -40,19 +41,25 @@ export const prerender = true
   <div class="bg-gradient-to-b from-slate-200 to-slate-50 dark:from-slate-900 dark:to-slate-800" slot="header">
     <Nav />
     
-    <header class="max-w-[70rem] mx-auto md:min-h-[calc(100vh-32rem)] p-8 mx-auto flex flex-row items-end">
-      <div class="xl:basis-[18rem]" />
-      <div class="relative max-w-[50rem]">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-100 font-mono">Recent Industry News</h1>
+    <div class="relative">
+      <header class="max-w-[70rem] mx-auto md:min-h-[calc(100vh-32rem)] p-8 mx-auto flex flex-row items-end">
+        <div class="absolute -bottom-6 right-0 w-96 h-96">
+          <Lines />
+        </div>
+
+        <div class="xl:basis-[18rem]" />
         <div class="relative max-w-[50rem]">
-          <div class="absolute z-10 top-[7px] xl:left-1 w-[50px] h-[50px] bg-slate-800 dark:bg-slate-100 rounded-full flex flex-col justify-center items-center text-slate-100 dark:text-slate-800">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="relative top-1 w-6 h-6 animate-bounce">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
-            </svg>      
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-100 font-mono">Recent Industry News</h1>
+          <div class="relative max-w-[50rem]">
+            <div class="absolute z-10 top-[7px] xl:left-1 w-[50px] h-[50px] bg-slate-800 dark:bg-slate-100 rounded-full flex flex-col justify-center items-center text-slate-100 dark:text-slate-800">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="relative top-1 w-6 h-6 animate-bounce">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
+              </svg>      
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   </div>
 
   <div class="flex flex-wrap flex-col md:flex-row gap-6 max-w-[70rem] mx-auto p-8 md:py-16">
