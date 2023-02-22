@@ -15,11 +15,11 @@ export const Spanner = () => {
 
   return (
     <div className="w-screen overflow-hidden">
-      <div className="w-[calc(200vw)] -translate-x-1/4 flex flex-col gap-2 lg:gap-10 items-center text-2xl lg:text-6xl dark:text-white py-10" ref={ref}>
+      <div className="w-[calc(200vw)] -translate-x-1/2 lg:-translate-x-1/4 flex flex-col gap-2 lg:gap-10 justify-center items-center text-2xl lg:text-6xl dark:text-white py-10" ref={ref}>
         <motion.div 
           initial={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
-          whileInView={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
-          className="relative lg:-left-[5rem] basis-full shrink-0 flex flex-row items-center gap-10 mx-auto"
+          whileInView={{ transform: `translateX(${hookedYPostion * -5}rem)` }}
+          className="relative left-[2.5%] lg:-left-[5rem] basis-full shrink-0 flex flex-row items-center gap-10 mx-auto"
         >
           <ul className="underline col-start-1 shrink-0 flex flex-row gap-4">
             <li>Software developers</li>
@@ -44,7 +44,7 @@ export const Spanner = () => {
         <motion.div 
           initial={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
           whileInView={{ transform: `translateX(${hookedYPostion * 10}rem)` }}
-          className="relative left-[4.5rem] lg:left-[6.5rem] basis-full shrink-0 flex flex-row gap-10 mx-auto"
+          className="relative left-[15%] lg:left-[6.5rem] basis-full shrink-0 flex flex-row gap-10 mx-auto"
         >
           <ul className="underline col-start-3 shrink-0 flex flex-row items-center gap-4">
             <li>Designers</li>
@@ -68,8 +68,8 @@ export const Spanner = () => {
         </motion.div>
         <motion.div 
           initial={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
-          whileInView={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
-          className="relative left-[0.5rem] lg:-left-[3rem] basis-full shrink-0 flex flex-row gap-10 mx-auto"
+          whileInView={{ transform: `translateX(${hookedYPostion * -7}rem)` }}
+          className="relative left-[12%] lg:-left-[3rem] basis-full shrink-0 flex flex-row gap-10 mx-auto"
         >
           <ul className="underline col-start-3 shrink-0 flex flex-row items-center gap-4">
             <li>Teachers</li>
