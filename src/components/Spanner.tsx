@@ -15,7 +15,7 @@ export const Spanner = () => {
 
   return (
     <div className="w-screen overflow-hidden">
-      <div className="w-[calc(200vw)] -translate-x-1/3 lg:-translate-x-1/4 flex flex-col gap-2 lg:gap-10 justify-center items-center text-xl lg:text-6xl dark:text-white py-10" ref={ref}>
+      <div className="w-[calc(200vw)] -translate-x-1/3 lg:-translate-x-1/4 flex flex-col gap-2 lg:gap-10 justify-center items-center text-xl lg:text-6xl xl:text-8xl dark:text-white py-10" ref={ref}>
         <motion.div 
           initial={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
           whileInView={{ transform: `translateX(${hookedYPostion * -10}rem)` }}
