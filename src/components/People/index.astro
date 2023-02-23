@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Person from './Person.astro';
+
+export interface Props {
+  scrolling?: boolean
+  profiles: CollectionEntry<'profiles'>[]
+}
+
+const { profiles, scrolling = false } = Astro.props
+---
+{scrolling && (
+  <div class="flex flex-row w-screen py-8 px-8 overflow-scroll">
+    <div class="w-[min-content] flex flex-row gap-2">
+      <div class="hidden lg:block basis-[calc((100vw-100%)/2-15.5rem)] grow-0 shrink-0" />
+        {profiles.map(profile => <Person {...profile} />)}
+      <div />
+    </div>
+  </div>
+)}
+{!scrolling && (
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-max">
+    {profiles.map(profile => <Person {...profile} />)}
+  </div>
+)}
+

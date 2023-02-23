@@ -1,37 +1,32 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content"
-import TableOfContents from "../components/TableOfContents.astro";
-import Breadcrumb from "../components/Breadcrumb.astro";
-import Footer from "../components/Footer.astro";
-import Nav from "../components/Nav.astro";
-import typography from "../content/typography";
-import Layout from "../layout/Layout.astro";
-import Lines from "../components/Lines";
+import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content"
+import TableOfContents from "../../components/TableOfContents.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Footer from "../../components/Footer.astro";
+import Nav from "../../components/Nav.astro";
+import typography from "../../content/typography";
+import Layout from "../../layout/Layout.astro";
+import Lines from "../../components/Lines";
+import People from '../../components/People/index.astro'
 
 export interface Props {
   page: CollectionEntry<'pages'>,
   subPages: CollectionEntry<'pages'>[]
 }
 
-export async function getStaticPaths() {
-  const pages = await getCollection('pages')
+const pages = await getCollection('pages')
+const page = await getEntryBySlug('pages', 'pei-devs/elders')
+const pageParts = page.slug.split("/")
+const base = pageParts.length > 1 ? pageParts.join("/") : pageParts.splice(0, pageParts.length).join('/')
+const subPages = pages
+  .filter(p => p.slug !== page.slug)
+  .filter(page => page.slug.includes(base))
 
-  return pages.map(page => {
-    const pageParts = page.slug.split("/")
-    const base = pageParts.length > 1 ? pageParts.join("/") : pageParts.splice(0, pageParts.length).join('/')
-    const subPages = pages
-      .filter(p => p.slug !== page.slug)
-      .filter(page => page.slug.includes(base))
-
-    return {
-      params: { slug: page.slug }, props: { page, subPages }
-    }
-  })
-}
-
-const { page: { data, render }, subPages } = Astro.props;
+const { data, render } = page
 const { Content, headings } = await render()
 const url = Astro.url
+const activeElders = await getCollection('profiles', (entry) => entry.data.peiDevsElder === 'active')
+const inactiveElders = await getCollection('profiles', (entry) => entry.data.peiDevsElder === 'inactive')
 
 export const prerender = true
 ---
@@ -89,6 +84,17 @@ export const prerender = true
       <div class="flex flex-col gap-2 text-slate-800 dark:text-slate-200 leading-loose text-lg">
         <Content components={typography} />
       </div>
+
+      <section id="active" class="flex flex-col gap-4">
+        <h3 class="font-mono text-2xl text-slate-800 dark:text-slate-100">Current Elders</h3>
+        <People profiles={activeElders} />
+      </section>
+
+      <section id="inactive" class="flex flex-col gap-4">
+        <h3 class="font-mono text-2xl text-slate-800 dark:text-slate-100">Elders on Sabbatical (semi-retired)</h3>
+        <People profiles={inactiveElders} />
+      </section>
+
       {subPages && subPages.length > 0 && (
         <aside class="block md:hidden">
           <h3 class="font-mono text-md font-bold text-slate-500">More</h3>

@@ -1,6 +1,6 @@
 export const typography = {
   h1: (props: any) => <span className="pt-6"><h2 className="font-mono text-3xl text-slate-800 dark:text-slate-100" {...props} /></span>,
-  h2: (props: any) => <span className="pt-4"><h3 className="font-mono text-2xl text-slate-800 dark:text-slate-100"{...props} /></span>,
+  h2: (props: any) => <span className="pt-4"><h3 className="font-mono text-2xl text-slate-800 dark:text-slate-100" {...props} /></span>,
   h3: (props: any) => <span className="pt-2"><h4 className="font-mono text-xl text-slate-800 dark:text-slate-100" {...props} /></span>,
   h4: (props: any) => <span className="pt-2"><h5 className="font-mono text-lg text-slate-800 dark:text-slate-100" {...props} /></span>,
   h5: (props: any) => <span className="pt-2"><h6 className="font-mono text-md text-slate-800 dark:text-slate-100" {...props} /></span>,

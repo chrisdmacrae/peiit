@@ -21,7 +21,8 @@ const newsCollection = defineCollection({
     image: z.optional(z.string()),
     pubDate: z.string().transform(str => new Date(str)),
     meta: seo
-  }),  
+  }),
+  slug: (entry) => `news/${entry.defaultSlug}`
 })
 
 const profileCollection = defineCollection({
@@ -32,8 +33,10 @@ const profileCollection = defineCollection({
     photo: z.string(),
     description: z.string(),
     pubDate: z.string().transform(str => new Date(str)),
-    meta: seo
-  }),  
+    meta: seo,
+    peiDevsElder: z.optional(z.union([z.literal('active'), z.literal('inactive')]))
+  }),
+  slug: (entry) => entry.defaultSlug.startsWith('pei-devs') ? entry.defaultSlug : `news/${entry.defaultSlug}`
 })
 
 export const collections = {
