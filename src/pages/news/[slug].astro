@@ -10,7 +10,7 @@ import type { NewsItem } from "./index.astro";
 import Lines from "../../components/Lines";
 
 export async function getStaticPaths() {
-  const profiles = await getCollection('profiles')
+  const profiles = await getCollection('profiles', entry => !entry.slug.startsWith('pei-devs'))
   const news = await getCollection('news')
   const items = [...profiles, ...news]
     .map(i => ({ 
