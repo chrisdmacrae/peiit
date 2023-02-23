@@ -8,7 +8,7 @@ import {Picture} from '@astrojs/image/components'
 import Lines from "../../components/Lines";
 
 const page = await getEntryBySlug('pages', '_news') as any
-const profiles = await getCollection('profiles')
+const profiles = await getCollection('profiles', entry => !entry.slug.startsWith('pei-devs'))
 const news = await getCollection('news')
 
 export type NewsItem = {
