@@ -76,6 +76,11 @@ export const prerender = true
                 <li>{page.data.title}</li>
               </a>
             ))}
+            {data.externalPages?.map(page => (
+              <a href={page.url}>
+                <li>{page.title}</li>
+              </a>
+            ))}
           </ol>
         </aside>
       )}
@@ -102,6 +107,11 @@ export const prerender = true
             {subPages.map(page => (
               <a href={`/${page.slug}`}>
                 <li>{page.data.title}</li>
+              </a>
+            ))}
+            {data.externalPages?.map(page => (
+              <a href={page.url}>
+                <li>{page.title}</li>
               </a>
             ))}
           </ol>

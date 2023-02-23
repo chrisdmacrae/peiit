@@ -10,7 +10,11 @@ const pageCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.string().transform(str => new Date(str)),
-    meta: seo
+    meta: seo,
+    externalPages: z.optional(z.array(z.object({
+      title: z.string(),
+      url: z.string()
+    })))
   }),
 })
 
