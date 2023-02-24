@@ -35,7 +35,7 @@
           body: fields
         })
 
-        if (!response.ok) {
+        if (!(response.status >= 200) && !(response.status < 400)) {
           throw new Error("Send failed")
         }
         else {
