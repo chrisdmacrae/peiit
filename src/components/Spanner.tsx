@@ -5,7 +5,7 @@ export const Spanner = () => {
   const ref = useRef<HTMLDivElement | null>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['end end', 'start end']
+    offset: ['end 500px', 'start end']
   })
   const motionYPosition = useMotionValue(1)
   const [hookedYPosition, setHookedYPosition] = useState(motionYPosition.get())
