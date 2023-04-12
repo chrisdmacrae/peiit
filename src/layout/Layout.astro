@@ -2,6 +2,7 @@
 import Tabbar from '../components/Tabbar.astro'
 import Drawer from '../components/Drawer.astro'
 import { generateOGUrl } from '../pages/api/og.png'
+import JoinForm from '../components/forms/JoinForm.astro'
 
 export interface Props {
   title?: string
@@ -51,15 +52,7 @@ const ogImageUrl = generateOGUrl({ title: title || "PEI IT Alliance" })
 
     <div class="relative max-w-[70rem] mx-auto">
       <Drawer id="join" title="Join the Alliance">
-        <p class="text-md text-slate-700 max-w-prose mx-auto py-6">Joining the alliance is completely free. You're opting into a community of local and remote workers, companies, and organizations invested in your success in IT.</p>
-        <form class="flex flex-col gap-2">
-          <label for="name" class="font-bold text-slate-500">Your name</label>
-          <input type="text" id="name" name="name" class="h-12 border-b-2 bg-slate-100 border-slate-400 text-slate-800 w-full" />
-          <label for="email" class="font-bold text-slate-500">Your email</label>
-          <input type="email" id="name" name="name" class="h-12 border-b-2 bg-slate-100 border-slate-400 text-slate-800 w-full" />
-          <label for="message" class="font-bold text-slate-500">Your message</label>
-          <textarea id="message" name="message" rows="6" class="border-b-2 bg-slate-100 border-slate-400 text-slate-800 w-full" />
-        </form>
+        <JoinForm />
       </Drawer>
     </div>
 

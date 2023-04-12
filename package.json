@@ -3,11 +3,14 @@
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
+		"predev": "yarn forms",
 		"dev": "astro dev",
 		"start": "astro dev",
+		"prebuild": "yarn forms",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"forms": "node ./scripts/getForms.js"
 	},
 	"dependencies": {
 		"@astrojs/image": "^0.15.0",

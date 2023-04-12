@@ -1,0 +1,86 @@
+---
+export type Field = {
+  id: string
+  type: string
+  title: string
+  help_text?: string
+  options?: string[]
+  lower_bound?: number
+  upper_bound?: number
+}
+
+export interface Props {
+  id: string,
+  action: string,
+  fields: Field[]
+  submit?: string
+}
+
+const { id, action, fields, submit = "Submit" } = Astro.props
+---
+<form id={id} action={action} class="flex flex-col gap-2">
+  <div data-form-error class="hidden w-full rounded-xl bg-red-200 text-red-800 p-4">Something went wrong</div>
+  <div data-form-success class="hidden w-full rounded-xl bg-green-200 text-green-800 p-4">We received your message, thanks!</div>
+
+  {fields.map(field => {
+    switch (field.type) {
+      case "TEXT":
+        return (
+          <label for={field.id} class="font-bold text-slate-500">{field.title}</label>
+          <input type="text" id={field.id} name={field.id} class="h-12 border-b-2 bg-slate-100 border-slate-400 text-slate-800 w-full" />
+        )
+      case "PARAGRAPH_TEXT":
+        return (
+          <label for={field.id} class="font-bold text-slate-500">{field.title}</label>
+          <textarea id={field.id} name={field.id} rows="6" class="border-b-2 bg-slate-100 border-slate-400 text-slate-800 w-full" />
+        )
+    }
+  })}
+  <button type="submit" class="w-fit border-2 border-slate-200 dark:border-slate-600 hover:border-slate-800 dark:hover:border-slate-400 rounded-xl px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 font-mono">
+    {submit}
+  </button>
+</form>
+
+<script define:vars={{id}}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById(id)
+    const error = form.querySelector('[data-form-error]')
+    const success = form.querySelector('[data-form-success]')
+
+    if (!form || !error || !success) return
+
+    const action = form.getAttribute('action')
+    const submit = form.querySelector('button[type=submit]')
+
+    if (!action || !submit) return
+
+    form.addEventListener('submit', async e => {
+      try {
+        e.preventDefault()
+
+        const fields = new FormData(form)
+        const payload = JSON.stringify(fields)
+        const response = await fetch(action, {
+          method: "POST",          
+          body: payload
+        })
+
+        if (!response.status || response.status !== "OK") {
+          throw new Error("Send failed")
+        }
+        else {
+          success.classList.remove('hidden')
+          submit.setAttribute('disabled', 'true')
+
+          setTimeout(() => success.classList.add('hidden'), 5000)
+        }
+      }
+      catch(e) {
+        error.classList.remove('hidden')
+
+        setTimeout(() => error.classList.add('hidden'), 5000)
+      }
+    })
+  })
+</script>
+

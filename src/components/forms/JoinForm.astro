@@ -1,0 +1,6 @@
+---
+import {action, fields} from "../../data/forms/join.json"
+import GoogleForm from "./GoogleForm.astro";
+---
+<p class="text-md text-slate-700 max-w-prose mx-auto py-6">Joining the alliance is completely free. You're opting into a community of local and remote workers, companies, and organizations invested in your success in IT.</p>
+<GoogleForm id="join_form" fields={fields} action={action} />
